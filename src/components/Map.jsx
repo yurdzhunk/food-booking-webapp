@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 import { Box, Container } from '@mui/material';
 import '../assets/stores_images/stores.css';
 
