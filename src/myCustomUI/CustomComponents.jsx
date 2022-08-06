@@ -50,3 +50,9 @@ export const StoreLabelBox = styled(Box)({
         cursor: 'pointer'
       }
 })
+
+export const TypographyLabel = styled(Typography)({
+    "&:hover": {
+        cursor: 'pointer'
+      }
+})

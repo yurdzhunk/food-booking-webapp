@@ -16,8 +16,8 @@ const Main = () => {
                     {
                         stores.map((item) => {
                             return (
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <StoreLabelBox sx={{backgroundImage: "url(" + storesImages[item] + ")"}} onClick={() => navigate('/Products', {store: item})}>
+                                    <Grid item xs={12} sm={6} md={4} key={item}>
+                                        <StoreLabelBox sx={{backgroundImage: "url(" + storesImages[item] + ")"}} onClick={() => navigate('/Products', {state: {store: item}})}>
                                             <Box sx={{backgroundColor: 'rgba(0, 0, 0, .4)', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                                 <Typography sx={{color: '#fff'}}>{item}</Typography>
                                             </Box>
