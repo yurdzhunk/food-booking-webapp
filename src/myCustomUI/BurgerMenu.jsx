@@ -37,7 +37,6 @@ const BurgerMenu = () => {
             'aria-labelledby': 'basic-button',
             }}
         >
-            <MenuItem onClick={() => handleCloseAndDirection('Cart')}>Cart</MenuItem>
             <MenuItem onClick={() => handleCloseAndDirection('Restaurants')}>Restaurants</MenuItem>
             <Divider/>
             <MenuItem onClick={() => handleCloseAndDirection('SignIn')}>Sign In</MenuItem>

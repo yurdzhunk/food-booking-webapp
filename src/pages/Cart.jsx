@@ -51,13 +51,27 @@ const Cart = () => {
                                                 </Grid>
                                                 <Grid item xs={1} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                                     <Stack direction={lowerThanSmall ? 'row' : 'column' } spacing={1}>
-                                                        <Button onClick={() => dispatch(plusCount(item.id))}>
-                                                            <AddIcon />
-                                                        </Button>
-                                                        <Typography sx={{textAlign: 'center'}}>{item.count}</Typography>
-                                                        <Button onClick={() => dispatch(minusCount(item.id))}>
-                                                            <RemoveIcon />
-                                                        </Button>
+                                                        {
+                                                            lowerThanSmall
+                                                            ?<>
+                                                            <Button onClick={() => dispatch(minusCount(item.id))}>
+                                                                <RemoveIcon />
+                                                            </Button>
+                                                            <Typography sx={{textAlign: 'center'}}>{item.count}</Typography>
+                                                            <Button onClick={() => dispatch(plusCount(item.id))}>
+                                                                <AddIcon />
+                                                            </Button>
+                                                            </>
+                                                            :<>
+                                                            <Button onClick={() => dispatch(plusCount(item.id))}>
+                                                                <AddIcon />
+                                                            </Button>
+                                                            <Typography sx={{textAlign: 'center'}}>{item.count}</Typography>
+                                                            <Button onClick={() => dispatch(minusCount(item.id))}>
+                                                                <RemoveIcon />
+                                                            </Button>
+                                                            </>
+                                                        }
                                                     </Stack>
                                                 </Grid>
                                                 <Grid item xs={2} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>

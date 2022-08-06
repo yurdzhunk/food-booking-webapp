@@ -28,6 +28,7 @@ const NavBar = () => {
                                 </TypographyLabel>
                             </Grid>
                             <Grid item xs={6} md={6} sx={{display:'flex', justifyContent:'flex-end', alignItems:'center'}}>
+                                <LocalGroceryStoreIcon onClick={() => navigate('Cart')}/>
                                 <BurgerMenu />
                             </Grid>
                         </Grid>
