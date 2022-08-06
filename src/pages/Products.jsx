@@ -96,11 +96,11 @@ const Products = () => {
                 {
                     products.map((item, index) => {
                         return(
-                            <Grid item xs={6} sx={{justifyContent: 'center', alignItems: 'center'}} key={index}>
+                            <Grid item xs={12} sm={6} sx={{justifyContent: 'center', alignItems: 'center'}} key={index}>
                                 <Box sx={{boxShadow: 10, justifyContent: 'center', paddingBottom: '1rem'}}>
                                     <Grid container direction='column' spacing={1}>
                                         <Grid item xs={6} sx={{display: 'flex', justifyContent: 'center'}}>
-                                            <img style={{ height: '200px'}} src={productsImages[index]} />
+                                            <img style={{ height: '200px', width: '100%'}} src={productsImages[index]} />
                                         </Grid>
                                         <Grid item xs={1} sx={{display: 'flex', justifyContent: 'center'}}>
                                             <Typography variant='h4' sx={{textAlign: 'center'}}>

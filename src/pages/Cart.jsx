@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -13,6 +13,9 @@ const Cart = () => {
     const productsInCart = useSelector((state) => state.cartProducts.list);
     const [total, setTotal] = useState(0);
     const navigate = useNavigate();
+
+    const theme = useTheme();
+    const lowerThanSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
     useEffect(() => {
         let tempTotal = 0;
@@ -37,20 +40,17 @@ const Cart = () => {
                                 return(
                                     <Grid item xs={12} sx={{justifyContent: 'center', alignItems: 'center'}} key={index}>
                                         <Box sx={{boxShadow: 10, justifyContent: 'center', paddingBottom: '1rem'}}>
-                                            <Grid container direction='row' spacing={1}>
-                                                <Grid item xs={3} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                                    <img style={{ height: '200px', width: '250px'}} src={item.image} />
+                                            <Grid container direction={lowerThanSmall ? 'column' : 'row' } spacing={1}>
+                                                <Grid item xs={5} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                                    <img style={{ height: '200px', width: '100%'}} src={item.image} />
                                                 </Grid>
                                                 <Grid item xs={2} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                                     <Typography variant='h6' sx={{textAlign: 'center'}}>
                                                         {item.name}
                                                     </Typography>
                                                 </Grid>
-                                                <Grid item xs={3} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                                    <Typography>{item.store} Delivery</Typography>
-                                                </Grid>
                                                 <Grid item xs={1} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                                    <Stack direction='column' spacing={1}>
+                                                    <Stack direction={lowerThanSmall ? 'row' : 'column' } spacing={1}>
                                                         <Button onClick={() => dispatch(plusCount(item.id))}>
                                                             <AddIcon />
                                                         </Button>
@@ -65,11 +65,11 @@ const Cart = () => {
                                                         * {item.price}$ = {item.count * item.price}$
                                                     </Typography>
                                                 </Grid>
-                                                <Grid item xs={1} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                                <Grid item xs={2} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                                     <Button 
                                                         variant='contained' 
                                                         color='error' 
-                                                        sx={{height: '50px', width: '100%', marginRight: '1rem'}}
+                                                        sx={!lowerThanSmall ? {height: '50px', width: '100%', marginRight: '1rem'} : {height: '50px', width: '100%'}}
                                                         onClick={() => deleteProductFromCart(item.id)}
                                                     >
                                                         <DeleteForeverIcon fontSize='large'/>
