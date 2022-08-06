@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Collapse, Container, IconButton, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, Collapse, Container, IconButton, Stack, TextField, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useState } from 'react';
 import { emptyCart } from '../redux/cartProducts';
 import { doc, setDoc } from "firebase/firestore"; 
@@ -18,6 +18,9 @@ const Order = () => {
     const [colorAdress, setColorAdress] = useState('primary');
     const [colorPhone, setColorPhone] = useState('primary');
     const [isOpen, setIsOpen] = useState(false);
+
+    const theme = useTheme();
+    const lowerThanSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
     const productsInCart = useSelector((state) => state.cartProducts.list);
     const dispatch = useDispatch();
@@ -109,7 +112,7 @@ const Order = () => {
                                         required
                                         label='Name'
                                         placeholder='Name'
-                                        sx={{width: '30rem'}}
+                                        sx={lowerThanSmall ?{width: '20rem'} :{width: '30rem'}}
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                         color={colorName}
@@ -117,7 +120,7 @@ const Order = () => {
                                     <TextField
                                         label='Surname'
                                         placeholder='Surname'
-                                        sx={{width: '30rem'}}
+                                        sx={lowerThanSmall ?{width: '20rem'} :{width: '30rem'}}
                                         value={surname}
                                         onChange={(e) => setSurname(e.target.value)}
                                         color={colorSurname}
@@ -126,7 +129,7 @@ const Order = () => {
                                         required
                                         label='Delivery adress'
                                         placeholder='Deliver adress'
-                                        sx={{width: '30rem'}}
+                                        sx={lowerThanSmall ?{width: '20rem'} :{width: '30rem'}}
                                         value={adress}
                                         onChange={(e) => setAdress(e.target.value)}
                                         color={colorAdress}
@@ -135,7 +138,7 @@ const Order = () => {
                                         required
                                         label='Phone'
                                         placeholder='Phone'
-                                        sx={{width: '30rem'}}
+                                        sx={lowerThanSmall ?{width: '20rem'} :{width: '30rem'}}
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                         color={colorPhone}

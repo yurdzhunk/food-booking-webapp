@@ -57,7 +57,7 @@ const Cart = () => {
                                                             <Button onClick={() => dispatch(minusCount(item.id))}>
                                                                 <RemoveIcon />
                                                             </Button>
-                                                            <Typography sx={{textAlign: 'center'}}>{item.count}</Typography>
+                                                            <Typography variant='h6' sx={{textAlign: 'center'}}>{item.count}</Typography>
                                                             <Button onClick={() => dispatch(plusCount(item.id))}>
                                                                 <AddIcon />
                                                             </Button>
@@ -66,7 +66,7 @@ const Cart = () => {
                                                             <Button onClick={() => dispatch(plusCount(item.id))}>
                                                                 <AddIcon />
                                                             </Button>
-                                                            <Typography sx={{textAlign: 'center'}}>{item.count}</Typography>
+                                                            <Typography variant='h6' sx={{textAlign: 'center'}}>{item.count}</Typography>
                                                             <Button onClick={() => dispatch(minusCount(item.id))}>
                                                                 <RemoveIcon />
                                                             </Button>
