@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import '../assets/stores_images/stores.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZHpodW5rIiwiYSI6ImNsNmMzaTkxaTAwdnUzZHFpMm9rZG95ZmYifQ.EhVBd_NgAtJY7kUVrpxkig';

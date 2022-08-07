@@ -1,4 +1,4 @@
-import { Box, Container, FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup, Typography } from '@mui/material'
+import { Container, FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup } from '@mui/material'
 import React, { useState } from 'react'
 import Map from '../components/Map'
 

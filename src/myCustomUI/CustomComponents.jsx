@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, CircularProgress, Grid, Slider, styled, Typography } from "@mui/material";
+import { Box, Button, Grid, styled, Typography } from "@mui/material";
 
 export const MyNavBarItem = styled(Button)({
     backgroundColor: 'rgba(256, 256, 256, .3)',
