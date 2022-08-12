@@ -56,12 +56,12 @@ const NavBar = () => {
                             </Grid>
                             <Grid item xs={6} md={4} sx={{display: 'flex', justifyContent: 'center'}}>
                                 <GridCenter item xs={6} md={6}>
-                                    <MyLogInButton variant='contained'>
-                                        Log In
+                                    <MyLogInButton onClick={() => navigate('/signin')} variant='contained'>
+                                        Sign In
                                     </MyLogInButton>
                                 </GridCenter>
                                 <GridCenter item xs={6} md={6}>
-                                    <MySignUpButton variant='contained'>
+                                    <MySignUpButton onClick={() => navigate('/signup')} variant='contained'>
                                         Sign Up
                                     </MySignUpButton>
                                 </GridCenter>
